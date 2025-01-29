@@ -204,11 +204,70 @@ imprimirMensajeConCallback('Hola Ale', mensajeTitle);
 //imprimirMensajeConCallback('Hola Ale', 589); //callback is not a Function
 
 
+//Que retorna una función que no tiene retorno > Undefined
+console.log(console.log('Hola Alejandra')); //Hola Alejandra y Undefined
 
+//=====================================================================================
+//-----------------------------Pase por valor y por referencia -----------------------------------
+//Una función es un objeto al igual que un array 
 
+let colorPintura = "rojo";
+function cambiarColorPintura(color){
+  console.log(`El color que llega a la función es ${color}`); // rojo
+    color = "azul";
+    console.log(`El color de la pintura que imprime la función es ${color}`); // azul
+}
+cambiarColorPintura(colorPintura);
+console.log(`El color de la pintura final es ${colorPintura}`); // rojo
 
+//============================ Pase por referencia =================
+const colores = ["rojo", "azul", "verde"];
+function cambiarColorArreglo(arreglo){
+  console.log(`El arreglo que llega a la función es ${arreglo}`); // "rojo", "azul", "verde"
+  arreglo[0] = "negro";
+  console.log(`Se imprimen los colores en la función: ${arreglo}`); // "negro", "azul", "verde"
+}
+cambiarColorArreglo( colores );
+console.log(`Los colores finales dentro del arreglo son: ${colores}`); // "negro", "azul", "verde"
 
+// =============================== Método sort() =====================================
+const series = ["Winnie", "Arnold", "avengers" ,"Atreve", "Digimon", "Naruto"];
+console.log( series.sort() ); // ['Arnold', 'Atreve', 'Digimon', 'Naruto', 'Winnie', 'avengers']
+const numeros = [ 122, 2, 1, 55]; 
+console.log( numeros.sort() ); // [1, 122, 2, 55]
+const ordenarNumeros = ( numA, numB) => {
+  if( numA < numB ){
+     return -1; // numA va antes que numB
+  } else if( numA > numB ) {
+     return 1; // numA va después que numB
+  } else { // Los números son iguales
+    return 0
+  }
+}
+console.log( ordenarNumeros( 3,6 ) ); // -1
+console.log( ordenarNumeros( 6,3 ) ); // 1
+console.log( ordenarNumeros( 3,3 ) ); // 0
 
+const numbers = [  1,   10,   3,   100,   5];
+console.log( numbers.sort( ordenarNumeros ) ); //  [1, 3, 5, 10, 100]
+//  [1,10     3,100,5];
+//  [1,3     10,100,5];
+//  [1,3,10,100   ,5 ];
+//  [1,3,10,5,   100 ];
+//  ... después de repetir las iteraciones nuevamente
+//  [1,3,5,10,,100 ];
+
+const ordenarNumerosSimplificado = (numA,numB) => numA-numB;
+const otrosNumeros = [  1,   10,   3,   100,   5];
+console.log( otrosNumeros.sort( ordenarNumerosSimplificado ) ); //  [1, 3, 5, 10, 100]
+
+const numerosDeLaSuerte = [  7,   21,   14,   28,   35];
+console.log( numerosDeLaSuerte.sort( (a,b)=> a-b ) );
+
+//Ordenar de forma descendente los siguientes números:
+const numCh50 = [19, 15, 13, 18, 5];
+
+console.log(numCh50.sort( ((a,b) => b-a) ));
 
 
 
