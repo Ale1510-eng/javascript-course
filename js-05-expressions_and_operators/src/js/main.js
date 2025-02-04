@@ -95,3 +95,182 @@ console.log(  0 == false ); // true
 // String: devuelve verdadero solo si ambos operandos tienen los mismos caracteres y en el mismo orden.
 console.log( "hola" == "hola" ); // true
 console.log( "hola" == "Hola" ); // false
+console.log( 'Hola "Ch50" ' == 'Hola "Ch50" ' ); 
+console.log( "Hola \"Ch50\" " == "Hola \"Ch50\" " ); 
+console.log("Primer línea, segunda línea, tercer línea");
+console.log("Primer línea,\n segunda línea,\n\t tercer línea");
+
+// Se recomienda usar el método localCompare(): compara cadenas de texto de acuerdo con las reglas de un idioma específico
+console.log("apple".localeCompare("banana")); // -1 (porque "apple" < "banana")
+console.log("grape".localeCompare("grape"));  // 0 (son iguales)
+console.log("pear".localeCompare("orange"));  // 1 (porque "pear" > "orange")
+console.log("a".localeCompare("A", "en", { sensitivity: "base" })); // 0
+console.log( "a".localeCompare("A") ); //
+
+// Number: devuelve verdadero solo si ambos operandos tienen el mismo valor. 
+// +0 y -0 se tratan como el mismo valor. 
+// Si alguno de los operandos es NaN, devuelve falso.
+console.log(  +0 == -0 ); // true
+console.log(  NaN == NaN ); // false
+console.log(  1 == 1 ); // true
+console.log(  1 == 1.0 ); // true
+console.log(  1 == 1.1 ); // false
+console.log(  isNaN("hola" / 3 )  ); // true
+
+// ------- Operadores de asignación ----------------
+/*
+ Asigna un valor a su operador izquierdo basándose en el valor
+ de su operando derecho:
+ asignación =
+ igualdad ==
+ estrictamente igual ===
+ 
+ Operadores abreviados ( compuestos ):
+  op1 += op2  -> op1 = op1 + op2
+  op1 -= op2  -> op1 = op1 - op2
+  op1 *= op2  -> op1 = op1 * op2
+*/
+
+let suma = 0;
+// Agregar 2 al valor de suma
+// suma = suma  + 2;
+suma += 2;
+
+// --------- ejercicio mental --------------------
+let valorA = 15;
+valorA *= 2; // valorA = valorA * 2;
+
+// --------- ejercicio mental --------------------
+let mensaje = "Me voy a de vacaciones";
+mensaje += 2; // mensaje = mensaje + 2; "Me voy a de vacaciones2"
+
+// -------------- Operadores unarios ------------------
+// Solo actuan sobre un operando
+// Negación unaria (cambia el signo en números)
+let numero = 3;
+let dinero = -numero; // -3
+console.log( numero, dinero); // 3, -3
+// suma unaria (No cambia el signo el números)
+let pago = +dinero; // 
+console.log( pago ); // -3
+let intereses = +"5.23"; // number
+console.log( 5 + intereses ); //  10.23
+console.log( 5 + parseInt(intereses) ); //  10.23
+let pagoFinal = 0;
+console.log( pagoFinal += 5 + + "3" ); // 8
+console.log( pagoFinal += 5 + parseFloat ("3") ); // 8
+// Operador de incremento y decremento en unidad.
+/*
+  Operador de pre-incremento y pre-decremento
+    ++ valor
+    -- valor
+  Operador de post-incremento y post-decremento
+    valor ++
+    valor --
+*/
+
+// Uso de post-incremento
+number = 20;
+console.log( number ); // 20
+console.log( number = number + 1 ); // 21
+// valor++
+number = 20;
+console.log( number++ ); // 20
+console.log( number ); // 21
+
+// Uso de pre-incremento
+number = 40;
+console.log( number = number + 1 ); // 41
+console.log( number ); // 41
+// ++valor
+number = 40;
+console.log( ++number ); //41
+console.log( number ); // 41
+
+number = 100;
+let kati = 10;
+console.log( kati + + number  ); // 110
+console.log( kati + ++number  ); // 111
+
+// ------------ Ejercicio Mental ---------------------
+let x = 3;
+let y = x++; // y:3   x:4
+console.log(`x :${ x++ } y:${ ++y }`); // x:4    y:4
+                                       // x:5
+console.log(`x :${ x } y:${ y }`); // x:5     y:4
+
+// ------------ Ejercicio Mental ---------------------
+a = 0, b = 0; // 
+for( ; a < 3 ; b = ++a){ // b=1 a=1, b=2 a=2, b=3 a=3
+  console.log( a , b ); 
+  // N.Iteración     a     b
+  //   1             0     0
+  //   2             1     1
+  //   3             2     2
+
+}
+console.log( a , b ); // 3, 3
+
+// =============Imprimir los valores d array ====================
+const numeros = [2,4,5,67,8];
+let indice = 0;
+while( indice < numeros.length  ){
+  console.log("Número:" , numeros[indice++] );
+  //indice = indice + 1;  
+}
+
+// ---------------- Operadores lógicos && y || ---------------
+/*
+ También son conocidos como operadores de corto circuito ( short-circuit operators ).
+ OP1 && OP2 Si OP1 es verdadero, se retorna la expresión de OP2.
+ OP1 || OP2 Si OP1 es verdadero, se retorna la expresión de OP1.
+*/
+
+console.log( true && false ); // false
+console.log( true && "Usando corto circuito ");// "Usando corto circuito"
+console.log( "false" && "Mi mente sigue de vacaciones");// "Mi mente sigue de vacaciones"
+console.log( 0 && "Chau, chau"); // 0
+console.log( "" && "Chau, chau"); // "" empty string
+console.log( false && "Chau, chau"); // false
+
+console.log( true || false ); //true
+console.log( true || "Usando corto circuito ");// true
+console.log( "false" || "Mi mente sigue de vacaciones");// "false"
+console.log( 0 || "Chau, chau"); // "chau,chau"
+console.log( "" || "Chau, chau"); // "chau,chau" 
+console.log( false || "Chau, chau"); // "Chau, chau" 
+
+console.log(true || variable);
+
+let loggedIn = true;
+loggedIn && console.log("Bienvenido usuario");
+
+// ------------ ejercicio-------------------------------
+// Mostrar en consola "Acceso permitido" solo si la variable esAdmin = true
+
+let esAdmin = true;
+esAdmin && console.log("Acceso permitido");
+
+let nombre ="";
+let usuario = nombre || "Invitado";
+//https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing
+// let usuario = nombre ?? "invitado" // Funciona para null y undefined (casi como el or)
+console.log(nombre); //Invitado
+
+// ------------------ Ejercicio --------------------------
+/*
+  Imprimir en consola "Acceso Denegado" es la variable esAutorizado = true
+  En caso contrario imprimir "Acceso concedido".
+*/
+
+let esAutorizado = true;
+
+let message = esAutorizado && "Acceso concedido" || "Acceso Denegado";
+console.log(message);
+
+console.log(esAutorizado ? "Acceso concedido" : "Acceso Denegado");
+
+
+
+
+
