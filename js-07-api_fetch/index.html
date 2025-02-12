@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="./src/css/style.css" />
 </head>
 
-<body class="bg-dark text-light">
+<!-- < class="bg-dark text-light"> -->
 
   <header id="header"></header>
 
@@ -61,7 +61,7 @@
       </div>
     </section>
 
-    <section class="row my-3">
+    <section id="cards" class="row my-3">
 
     </section>
   </main>
@@ -79,7 +79,11 @@
   <!-- Main custom JS -->
   <script src="./src/js/main.js"></script>
   <!-- Apifetch get products -->
-  <script src="/src/components/api/getProducts.js"></script>
+  <!-- <script src="/src/components/api/getProducts.js"></script> -->
+  <script src="/src/components/getProductsUsingAsyncAway.js"></script>
+  <!-- Apifetch get users -->
+  <script type="module" src="/src/components/api/getUsers.js"></script>
 </body>
 
 </html>
+js-07-api_fetch/src/components/getProductsUsingAsyncAway.js

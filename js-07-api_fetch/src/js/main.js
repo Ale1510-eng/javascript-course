@@ -45,3 +45,7 @@ const usoDeSetTimeOut = (nombrePersona, titulo) => {
 console.log("01-Inicio de mi secuencia");
 usoDeSetTimeOut("Patricio Estrella", "Dr. Profesor")
 console.log("03-Fin de mi secuencia");
+
+//setTimeout no tiene retorno
+
+//setInterval tiene un retorno que puede usarse para detener la función 

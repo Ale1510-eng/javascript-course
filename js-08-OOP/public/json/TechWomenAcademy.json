@@ -1,0 +1,41 @@
+[
+    {
+        "id": 1,
+        "titulo": "Curso de Introducción a la Inteligencia Artificial",
+        "descripcion": "Fundamentos de la inteligencia artificial",
+        "precio": 89.99,
+        "nivel": "Principiante",
+        "duracion": 10,
+        "valoracion":
+            {
+                "calificacion": 4.0,
+                "numeroUsuarios": 200
+            }
+    },
+    {
+        "id": 2,
+        "titulo": "Curso de Programación Web para Principiantes",
+        "descripcion": "Desarrollo de aplicaciones web",
+        "precio": 49.99,
+        "nivel": "principiante",
+        "duracion": 8,
+        "valoracion":
+            {
+                "calificacion": 4.0,
+                "numeroUsuarios": 200
+            }
+    },
+    {
+        "id": 3,
+        "titulo": "Curso de Desarrollo de Apps Móviles con Swift (iOS)",
+        "descripcion": "Aprende a crear aplicaciones móviles",
+        "precio": 109.99,
+        "nivel": "Intermedio",
+        "duracion": 12,
+        "valoracion":
+            {
+                "calificacion": 4.0,
+                "numeroUsuarios": 200
+            }
+    }
+]

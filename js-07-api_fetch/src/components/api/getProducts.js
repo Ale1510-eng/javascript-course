@@ -27,14 +27,12 @@ Las promesa es un patrón asincrónico que se utiliza
     .catch( callback ) // Se ejecuta el callback cuando la promesa sea rechazada
     .finally( callback ); //Se ejecuta el callback independientemente de que sea resuelta o rechazada */
     fetch ( url )
-    .then ((resolve) =>{
-        console.log(resolve);
-        resolve.json()
-        .then( (productos) => console.log(productos) )
-        .catch( (error) => console.log(error) ); // convierte de JSON a Objeto de JS
-    }  )
+    .then ((resolve) => resolve.json())
+      .then( (productos) => console.log(productos) )
+      //.catch( (error) => console.log(error) )
+      //catch sirve para ambas promesas, no requiere otro adicional
     .catch( (error) => console.log(error)) 
     .finally( () => console.log("He terminado"));
 };
 
-getProducts("https://fakestoreapi.com/products");
+//getProducts("https://fakestoreapi.com/products");
