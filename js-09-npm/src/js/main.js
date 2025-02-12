@@ -1,4 +1,5 @@
 import "/src/css/styles.scss"
+import * as bootstrap from 'bootstrap'
 
 import { insertMainHeader } from "/src/modules/header/header";
 import { insertMainFooter } from "/src/modules/footer/footer";
