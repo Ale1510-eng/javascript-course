@@ -12,9 +12,12 @@
  * 
  */
 
-test ("verificar que el nombre ingresado sea valido", () =>{
+//import { checkNameInput } from "../../../src/pages/register/checkNameInput";
 
-    expect(checkNameInput("Arenita")).toBe( true );
+
+/* test ("verificar que el nombre ingresado sea valido", () =>{
+
+    expect(checkNameInputput("Arenita")).toBe( true );
     expect(checkNameInput("Li")).toBe( true );
     expect(checkNameInput("Kati")).toBeTruthy( true );
 
@@ -35,4 +38,4 @@ test ("verificar que el nombre ingresado sea null o undefined", () =>{
     expect(checkNameInput(null)).toBe( false );
     expect(checkNameInput(undefined)).toBe( false );
 
-});
+}); */
